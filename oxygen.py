@@ -16,6 +16,8 @@ def return_more_than_three_in_a_row(string):
     ""
     >>> return_more_than_three_in_a_row("abcdefg")
     ""
+
+    Now that I think of it, i could probably do it easier by using this regex: ([a-z])\1\1+ => \1
     """
     return_list = []
 
