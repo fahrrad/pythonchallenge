@@ -5,8 +5,10 @@ from urllib.parse import quote
 __author__ = 'CoesseW'
 img_file = open('oxygen.png', 'rb')
 
+
 def print_color(pxl_array, pos):
     print("color@ %dx0: %s" %(pos, pxl_array[pos]))
+
 
 def return_more_than_three_in_a_row(string):
     """yields every character in a sequence that occurs more 3 or more times ONCE for evey occurence
@@ -59,16 +61,12 @@ for i,(r,g,b,a) in enumerate(img_data[::img_width]):
         print(i,r)
 
 # I saw that row 46 is the middle row of the row that contains the greys
-band = 46
+band = 47
 row = img_data[img_width * band: img_width * (band+1)]
 
-ordinals = (return_more_than_three_in_a_row([r for r,_,_,_ in row]))
+ordinals = (return_more_than_three_in_a_row([r for r, _, _, _ in row]))
+print(ordinals)
 print(ordinals2string(ordinals))
-print (ordinals2string([105, 1110, 1116, 101, 103, 1114, 105, 1116, 121]))
 
-
-
-
-
-
-
+# By some strange reason, I get
+print(ordinals2string([105, 110, 116, 101, 103, 114, 105, 116, 121]))
